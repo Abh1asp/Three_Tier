@@ -21,7 +21,9 @@ namespace _3_TierP
             string cid = objbll.LogDB(TextBox1.Text, TextBox2.Text);
             if (cid == "1")
             {
-                Label1.Text = "Logged In";
+                string id = objbll.LogId(TextBox1.Text, TextBox2.Text);
+                Session["usrid"] = id;
+                Response.Redirect("Profile.aspx");
             }
             else
             {
